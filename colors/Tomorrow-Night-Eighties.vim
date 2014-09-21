@@ -246,7 +246,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("StatusLineNC", s:dark, s:window, "reverse")
 	call <SID>X("VertSplit", s:dark, s:dark, "none")
 	call <SID>X("Visual", "", s:selection, "")
-	call <SID>X("Directory", s:blue, "", "")
+	call <SID>X("Directory", s:brightblue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
 	call <SID>X("MoreMsg", s:green, "", "")
 	call <SID>X("Question", s:green, "", "")
@@ -277,7 +277,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Function", s:blue, "", "")
 	call <SID>X("Constant", s:orange, "", "")
 	call <SID>X("String", s:green, "", "")
-	call <SID>X("Special", s:foreground, "", "")
+	call <SID>X("Special", s:red, "", "")
 	call <SID>X("PreProc", s:purple, "", "")
 	call <SID>X("Operator", s:aqua, "", "none")
 	call <SID>X("Type", s:orange, "", "none")
@@ -286,7 +286,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	"call <SID>X("Ignore", "666666", "", "")
 
 	" Vim Highlighting
-	call <SID>X("vimCommand", s:red, "", "none")
+	call <SID>X("vimCommand", s:yellow, "", "none")
 
 	" C Highlighting
 	call <SID>X("cType", s:yellow, "", "")
