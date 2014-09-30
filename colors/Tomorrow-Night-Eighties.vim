@@ -15,8 +15,7 @@ let s:orange = "f99157"
 let s:yellow = "ffcc66"
 let s:green = "99cc99"
 let s:aqua = "009999"
-let s:blue = "99cccc"
-let s:brightblue = "6397CE"
+let s:blue = "6397CE"
 let s:purple = "cc99cc"
 let s:window = "4d5057"
 let s:dark = "202020"
@@ -246,7 +245,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("StatusLineNC", s:dark, s:window, "reverse")
 	call <SID>X("VertSplit", s:dark, s:dark, "none")
 	call <SID>X("Visual", "", s:selection, "")
-	call <SID>X("Directory", s:brightblue, "", "")
+	call <SID>X("Directory", s:blue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
 	call <SID>X("MoreMsg", s:green, "", "")
 	call <SID>X("Question", s:green, "", "")
@@ -300,7 +299,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   " SCSS Hightlighting
 	call <SID>X("sassClass", s:red, "", "")
 	call <SID>X("sassClassChar", s:red, "", "")
-	call <SID>X("sassMixinName", s:brightblue, "", "")
+	call <SID>X("sassMixinName", s:blue, "", "")
 	call <SID>X("sassCssAttribute", s:orange, "", "")
 
 	" PHP Highlighting
@@ -368,6 +367,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("htmlTagName", s:red, "", "")
 	call <SID>X("htmlArg", s:red, "", "")
 	call <SID>X("htmlScriptTag", s:red, "", "")
+	call <SID>X("htmlLink", s:blue, "", "underline")
 
 	" Diff Highlighting
 	call <SID>X("diffAdd", "", "4c4e39", "")
