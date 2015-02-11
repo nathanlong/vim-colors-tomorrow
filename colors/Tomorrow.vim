@@ -17,6 +17,7 @@ let s:aqua = "3e999f"
 let s:blue = "4271ae"
 let s:purple = "8959a8"
 let s:window = "efefef"
+let s:dark = "f0f0f0"
 
 set background=light
 hi clear
@@ -234,15 +235,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Vim Highlighting
 	call <SID>X("Normal", s:foreground, s:background, "")
-	highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+	call <SID>X("LineNr", s:selection, "", "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
-	call <SID>X("Search", s:foreground, s:yellow, "")
+	call <SID>X("Search", s:background, s:yellow, "")
 	call <SID>X("TabLine", s:window, s:foreground, "reverse")
 	call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
-	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
-	call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
-	call <SID>X("VertSplit", s:window, s:window, "none")
+	call <SID>X("StatusLine", s:dark, s:yellow, "reverse")
+	call <SID>X("StatusLineNC", s:dark, s:window, "reverse")
+	call <SID>X("VertSplit", s:dark, s:dark, "none")
 	call <SID>X("Visual", "", s:selection, "")
 	call <SID>X("Directory", s:blue, "", "")
 	call <SID>X("ModeMsg", s:green, "", "")
@@ -264,33 +265,42 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 
 	" Standard Highlighting
-	call <SID>X("Comment", s:comment, "", "")
+	call <SID>X("Comment", s:comment, "", "italic")
 	call <SID>X("Todo", s:comment, s:background, "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
-	call <SID>X("Statement", s:foreground, "", "")
+	call <SID>X("Statement", s:red, "", "")
 	call <SID>X("Conditional", s:foreground, "", "")
 	call <SID>X("Repeat", s:foreground, "", "")
 	call <SID>X("Structure", s:purple, "", "")
 	call <SID>X("Function", s:blue, "", "")
 	call <SID>X("Constant", s:orange, "", "")
 	call <SID>X("String", s:green, "", "")
-	call <SID>X("Special", s:foreground, "", "")
+	call <SID>X("Special", s:red, "", "")
 	call <SID>X("PreProc", s:purple, "", "")
 	call <SID>X("Operator", s:aqua, "", "none")
-	call <SID>X("Type", s:blue, "", "none")
+	call <SID>X("Type", s:orange, "", "none")
 	call <SID>X("Define", s:purple, "", "none")
 	call <SID>X("Include", s:blue, "", "")
 	"call <SID>X("Ignore", "666666", "", "")
 
 	" Vim Highlighting
-	call <SID>X("vimCommand", s:red, "", "none")
+	call <SID>X("vimCommand", s:yellow, "", "none")
 
 	" C Highlighting
 	call <SID>X("cType", s:yellow, "", "")
 	call <SID>X("cStorageClass", s:purple, "", "")
 	call <SID>X("cConditional", s:purple, "", "")
 	call <SID>X("cRepeat", s:purple, "", "")
+
+  " CSS Hightlighting
+	call <SID>X("StorageClass", s:yellow, "", "")
+
+  " SCSS Hightlighting
+	call <SID>X("sassClass", s:red, "", "")
+	call <SID>X("sassClassChar", s:red, "", "")
+	call <SID>X("sassMixinName", s:blue, "", "")
+	call <SID>X("sassCssAttribute", s:orange, "", "")
 
 	" PHP Highlighting
 	call <SID>X("phpVarSelector", s:red, "", "")
@@ -337,6 +347,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("javascriptGlobal", s:blue, "", "")
 	call <SID>X("javascriptStatement", s:red, "", "")
 
+  " Additional Javascript Hightlighting - for pangloss/vim-javascript
+	call <SID>X("jsFunction", s:purple, "", "")
+	call <SID>X("jsFuncCall", s:purple, "", "")
+	call <SID>X("jsStorageClass", s:purple, "", "")
+	call <SID>X("jsFuncArgs", s:orange, "", "")
+	call <SID>X("jsThis", s:red, "", "")
+	call <SID>X("jsGlobalObjects", s:yellow, "", "")
+
+
         " CoffeeScript Highlighting
         call <SID>X("coffeeRepeat", s:purple, "", "")
         call <SID>X("coffeeConditional", s:purple, "", "")
@@ -348,10 +367,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("htmlTagName", s:red, "", "")
 	call <SID>X("htmlArg", s:red, "", "")
 	call <SID>X("htmlScriptTag", s:red, "", "")
+	call <SID>X("htmlLink", s:blue, "", "underline")
 
 	" Diff Highlighting
-	call <SID>X("diffAdded", s:green, "", "")
-	call <SID>X("diffRemoved", s:red, "", "")
+	call <SID>X("diffAdd", "", "4c4e39", "")
+	call <SID>X("diffDelete", s:background, s:red, "")
+	call <SID>X("diffChange", "", "2B5B77", "")
+	call <SID>X("diffText", s:line, s:blue, "")
 
 	" ShowMarks Highlighting
 	call <SID>X("ShowMarksHLl", s:orange, s:background, "none")
