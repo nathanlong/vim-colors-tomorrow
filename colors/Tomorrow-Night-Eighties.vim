@@ -37,6 +37,7 @@ if &background == "light"
   let s:dark = "f0f0f0"
 endif
 
+set background=dark
 hi clear
 syntax reset
 
