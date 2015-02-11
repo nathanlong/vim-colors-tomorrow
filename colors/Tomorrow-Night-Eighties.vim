@@ -20,6 +20,23 @@ let s:purple = "cc99cc"
 let s:window = "4d5057"
 let s:dark = "202020"
 
+if &background == "light"
+  let s:foreground = "4d4d4c"
+  let s:background = "fafafa"
+  let s:selection = "d6d6d6"
+  let s:line = "efefef"
+  let s:comment = "8e908c"
+  let s:red = "c82829"
+  let s:orange = "f5871f"
+  let s:yellow = "eab700"
+  let s:green = "718c00"
+  let s:aqua = "3e999f"
+  let s:blue = "4271ae"
+  let s:purple = "8959a8"
+  let s:window = "efefef"
+  let s:dark = "f0f0f0"
+endif
+
 hi clear
 syntax reset
 
